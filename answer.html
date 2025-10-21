@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zero Hunger - Stop Food Waste</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Import Poppins font */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+        /* Basic Reset and Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            
+            /* 1. 🌐 GLOBAL PAGE BACKGROUND IMAGE 🌐 */
+            background-color: #f4f4f9; 
+            background-image: url('save food.jpg'); 
+            background-size: cover; 
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        /* Header/Hero Section */
+        .hero {
+            /* 2. 🏞️ HERO SECTION BACKGROUND IMAGE 🏞️ */
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('hero-background.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-weight: 400;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #FF9800;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: background-color 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .cta-button:hover {
+            background-color: #E68A00;
+            transform: translateY(-2px);
+        }
+
+        .image-section {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #ffffff; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+        }
+
+        .image-section img {
+            /* 3. 🖼️ DEDICATED CONTENT IMAGE 🖼️ */
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+            max-height: 400px;
+            object-fit: cover;
+        }
+
+
+        /* Main Content Styling */
+        main {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #4CAF50;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        /* Info Section (Statistics) */
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .stat-box {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex-basis: 30%; 
+            min-width: 250px;
+        }
+
+        .stat-box h3 {
+            font-size: 2.5rem;
+            color: #FF9800;
+            margin-bottom: 10px;
+        }
+
+        /* Action Section  */
+        .guide-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .guide-step {
+            background-color: #fff;
+            border-left: 5px solid #4CAF50;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            flex-basis: 30%;
+            min-width: 280px;
+        }
+
+        .step-number {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        /* Tracker Section (Simple App) */
+        .tracker-section {
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .tracker-app {
+            background-color: #e8f5e9;
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 20px auto;
+            text-align: left;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+        }
+
+        #waste-form label {
+            display: block;
+            margin-top: 15px;
+            font-weight: 700;
+        }
+
+        #waste-form input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #waste-form button {
+            background-color: #FF9800;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        #waste-form button:hover {
+            background-color: #E68A00;
+        }
+
+        #total-waste {
+            color: #FF0000;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        #waste-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 20px;
+        }
+
+        #waste-list li {
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 3px solid #FF0000;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            font-size: 0.9rem;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero h2 {
+                font-size: 1.4rem;
+            }
+            .stat-box, .guide-step {
+                flex-basis: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Zero Hunger</h1>
+            <h2>Ending Food Waste, Nourishing the World</h2>
+            <p>Every plate counts. Learn how simple changes can help eliminate hunger and save our planet.</p>
+            <a href="#action" class="cta-button">Take Action Now</a>
+        </div>
+    </header>
+
+    <section class="image-section">
+        <h2 class="section-title">The Challenge We Face</h2>
+        <img src="save food.jpg" alt="a beautiful image ">
+        <p style="margin-top: 15px; font-style: italic; color: #666;">This photo helps visualize the scale and importance of our mission.</p>
+    </section>
+    
+    <main>
+        <section class="info-section">
+            <h2 class="section-title">The Shocking Truth About Food Waste</h2>
+            <div class="stats-container">
+                <div class="stat-box">
+                    <h3>1/3</h3>
+                    <p>Of all food produced globally is lost or wasted.</p>
+                </div>
+                <div class="stat-box">
+                    <h3>$2.6 Trillion</h3>
+                    <p>The estimated economic loss from global food waste.</p>
+                </div>
+                <div class="stat-box">
+                    <h3>8%</h3>
+                    <p>Of global greenhouse gas emissions are caused by food waste.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="action" class="action-section">
+            <h2 class="section-title">Your 3-Step Guide to Zero Waste</h2>
+            <div class="guide-container">
+                <div class="guide-step">
+                    <span class="step-number">1</span>
+                    <h3>Plan Better 🛒</h3>
+                    <p>Make a shopping list and stick to it. Check your fridge and pantry before you go to the store.</p>
+                </div>
+                <div class="guide-step">
+                    <span class="step-number">2</span>
+                    <h3>Store Smart 🧊</h3>
+                    <p>Understand "Best By" vs. "Use By" dates. Store foods properly to keep them fresh longer (e.g., freeze leftovers!).</p>
+                </div>
+                <div class="guide-step">
+                    <span class="step-number">3</span>
+                    <h3>Use It Up! 🍽️</h3>
+                    <p>Get creative with leftovers. Compost what you can't eat. Donate extra food to local food banks.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="tracker-section">
+            <h2 class="section-title">Personal Waste Tracker (Simple Demo)</h2>
+            <div class="tracker-app">
+                <p>Track your food waste this week to see your impact:</p>
+                <form id="waste-form">
+                    <label for="item">Wasted Food Item:</label>
+                    <input type="text" id="item" name="item" placeholder="e.g., Half a loaf of bread" required>
+                    
+                    <label for="cost">Estimated Cost ($):</label>
+                    <input type="number" id="cost" name="cost" min="0" value="0.50" step="0.01" required>
+                    
+                    <button type="submit">Add to Tracker</button>
+                </form>
+
+                <h3>Your Weekly Waste: <span id="total-waste">$0.00</span></h3>
+                <ul id="waste-list">
+                    </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Zero Hunger Awareness. 🌱</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const wasteForm = document.getElementById('waste-form');
+            const wasteList = document.getElementById('waste-list');
+            const totalWasteElement = document.getElementById('total-waste');
+            
+            let totalWasteCost = 0;
+
+            function updateTotalWaste() {
+                totalWasteElement.textContent = `$${totalWasteCost.toFixed(2)}`;
+            }
+
+            // Event listener for form submission
+            wasteForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const itemInput = document.getElementById('item');
+                const costInput = document.getElementById('cost');
+
+                const item = itemInput.value;
+                const cost = parseFloat(costInput.value);
+
+                if (item === "" || isNaN(cost) || cost <= 0) {
+                    alert("Please enter a valid item and cost.");
+                    return;
+                }
+
+                totalWasteCost += cost;
+                updateTotalWaste();
+
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <span>${item}</span>
+                    <span class="waste-cost">$${cost.toFixed(2)}</span>
+                `;
+                
+                wasteList.appendChild(listItem);
+
+                itemInput.value = '';
+                costInput.value = '0.50';
+            });
+
+            updateTotalWaste();
+        });
+    </script>
+</body>
+</html>
